@@ -49,6 +49,24 @@ class Row extends Component {
     return posterUrl;
   }
 
+  renderingleftArrowClick() {
+    const { row, onLeftArrowClick } = this.props;
+    const leftArrow =
+      row.xPosition === 0 ? (
+        ""
+      ) : (
+        <div
+          className="row__previousMovie"
+          onClick={() => {
+            onLeftArrowClick(row.id);
+          }}
+        >
+          <i class="fas fa-chevron-left"></i>
+        </div>
+      );
+    return leftArrow;
+  }
+
   renderingRow() {
     // Rendering the movies in each row
     const { row } = this.props;
@@ -71,14 +89,7 @@ class Row extends Component {
       <div className="row">
         <h2 className="row__title">{row.title}</h2>
         <div className="row__posters" style={{ marginLeft: row.xPosition }}>
-          <div
-            className="row__previousMovie"
-            onClick={() => {
-              onLeftArrowClick(row.id);
-            }}
-          >
-            <i class="fas fa-chevron-left"></i>
-          </div>
+          {this.renderingleftArrowClick()}
           {this.renderingRow()}
           <div
             className="row__nextMovie"

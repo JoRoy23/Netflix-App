@@ -27,9 +27,11 @@ class Home extends Component {
   }
 
   handleClickLeftArrow = (rowId) => {
+    // Moving posters to the left on left arrow click
     const newArr = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         let xPosition = row.xPosition + Math.floor(window.innerWidth / 2);
+        console.log(xPosition);
         if (xPosition > 0) {
           row.xPosition = 0;
         } else {
@@ -43,14 +45,11 @@ class Home extends Component {
   };
 
   handleClickRightArrow = (rowId) => {
+    // Moving posters to the right on right arrow click
     const newArr = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         let xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
-        if (xPosition < -1700) {
-          row.xPosition = -1700;
-        } else {
-          row.xPosition = xPosition;
-        }
+        row.xPosition = xPosition;
         return row;
       }
       return row;
