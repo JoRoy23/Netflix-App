@@ -11,7 +11,9 @@ class Banner extends Component {
         <img className="banner__image" src={backdropPath} alt={title} />
         <div className="banner__content">
           <h1 className="banner__title">{title}</h1>
-          <h1 className="banner__description">{truncate(movieDescription)}</h1>
+          <h1 className="banner__description">
+            {truncate(movieDescription, 150)}
+          </h1>
           <div className="banner__buttons">
             <button className="banner__button banner__button--play">
               <i class="fas fa-play"></i>Play

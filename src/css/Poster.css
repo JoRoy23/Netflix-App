@@ -5,12 +5,11 @@
           POSTER
 ========================== */
 .poster {
-  width: 20vw;
-  height: 12vw;
-  max-height: 130px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 22vw;
+  height: auto;
   margin-right: 1vw;
-  -o-object-fit: contain;
-     object-fit: contain;
   border-radius: 5px;
   -webkit-transition: -webkit-transform 450ms;
   transition: -webkit-transform 450ms;
@@ -21,6 +20,7 @@
 @media screen and (min-width: 928px) {
   .poster {
     margin-right: 10px;
+    max-width: 330px;
   }
 }
 
@@ -30,8 +30,14 @@
 }
 
 .poster__large {
-  height: 30vw;
-  max-height: 280px;
+  width: 20vw;
+  height: auto;
+}
+
+@media screen and (min-width: 928px) {
+  .poster__large {
+    max-width: 270px;
+  }
 }
 
 .poster__large:hover {

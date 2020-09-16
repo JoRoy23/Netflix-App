@@ -26,6 +26,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
     transition: margin 0.5s ease;
+    scrollbar-width: none;
     @include desktop {
       padding: 20px;
     }

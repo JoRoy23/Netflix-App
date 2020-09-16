@@ -5,6 +5,7 @@ import axios from "../axios";
 import { choice } from "../helpers";
 import { basePosterUrl, bannerRequest, rowInformation } from "../config";
 import { v4 as uuidv4 } from "uuid";
+import defaultBanner from "../images/defaultBanner.jpg";
 import "../css/Home.css";
 
 class Home extends Component {
@@ -71,7 +72,7 @@ class Home extends Component {
       const bannerUrl = `${basePosterUrl}${backdropPath}`;
       return bannerUrl;
     }
-    return "";
+    return defaultBanner;
   }
 
   initializingRows() {

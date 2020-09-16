@@ -129,6 +129,7 @@
           background-color: rgba(20, 20, 20, 1);
           transition: background 0.3s;
           @include ipad {
+            background-color: transparent;
             color: #b3b3b3;
             transition: color 0.4s;
           }

@@ -38,6 +38,7 @@
   overflow-x: scroll;
   -webkit-transition: margin 0.5s ease;
   transition: margin 0.5s ease;
+  scrollbar-width: none;
 }
 
 @media screen and (min-width: 928px) {

@@ -188,6 +188,7 @@
 
 @media screen and (min-width: 768px) {
   .navbar__mainContainer .navbar__items .navbar__item .navbar__link:hover {
+    background-color: transparent;
     color: #b3b3b3;
     -webkit-transition: color 0.4s;
     transition: color 0.4s;

@@ -3,15 +3,15 @@
           POSTER
 ========================== */
 .poster {
-  width: 20vw;
-  height: 12vw;
-  max-height: 130px;
+  flex-shrink: 0;
+  width: 22vw;
+  height: auto;
   margin-right: 1vw;
-  object-fit: contain;
   border-radius: 5px;
   transition: transform 450ms;
   @include desktop {
     margin-right: 10px;
+    max-width: 330px;
   }
 }
 
@@ -20,8 +20,11 @@
 }
 
 .poster__large {
-  height: 30vw;
-  max-height: 280px;
+  width: 20vw;
+  height: auto;
+  @include desktop {
+    max-width: 270px;
+  }
 }
 
 .poster__large:hover {

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import netflixLogo from "../images/netflixLogo.png";
+import userAvatar from "../images/userAvatar.png";
 import "../css/Navbar.css";
 
 class Navbar extends Component {
@@ -60,7 +62,7 @@ class Navbar extends Component {
             </div>
             <img
               className="navbar__logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png"
+              src={netflixLogo}
               alt="Netflix Logo"
             ></img>
           </div>
@@ -131,7 +133,7 @@ class Navbar extends Component {
           </li>
           <img
             className="navbar__avatar"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bf6e4a33850498.56ba69ac3064f.png"
+            src={userAvatar}
             alt=" User Avatar"
           ></img>
         </ul>
