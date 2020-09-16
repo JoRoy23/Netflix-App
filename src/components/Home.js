@@ -31,7 +31,6 @@ class Home extends Component {
     const newArr = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         let xPosition = row.xPosition + Math.floor(window.innerWidth / 2);
-        console.log(xPosition);
         if (xPosition > 0) {
           row.xPosition = 0;
         } else {
@@ -49,20 +48,26 @@ class Home extends Component {
     const newArr = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         let xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
-        row.xPosition = xPosition;
+        if (window.innerWidth > 900) {
+          if (row.isLargeRow) {
+            var rowWidth = 5600;
+          } else {
+            var rowWidth = 6800;
+          }
+        } else {
+        }
+
+        if (window.innerWidth - rowWidth > xPosition) {
+          row.xPosition = window.innerWidth - rowWidth;
+        } else {
+          row.xPosition = xPosition;
+          console.log(xPosition);
+        }
         return row;
       }
       return row;
     });
     this.setState({ movieRows: newArr });
-    // this.setState((prevState) => {
-    //   let rowWidth = this.state.posters.length * 150;
-
-    //   if (window.innerWidth - rowWidth > xPosition) {
-    //     xPosition = window.innerWidth - rowWidth - 1200;
-    //   }
-    //   return { rowPositionX: xPosition };
-    // });
   };
 
   bannerUrl(backdropPath) {

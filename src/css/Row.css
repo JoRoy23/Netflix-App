@@ -17,6 +17,8 @@
 }
 
 .row__title {
+  position: relative;
+  z-index: 100;
   margin-left: 2vw;
   font-size: 2.8vw;
   color: #fff;

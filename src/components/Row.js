@@ -12,7 +12,7 @@ class Row extends Component {
     // State of his children components ("poster", "trailer")
     this.state = {
       posters: [],
-      trailer: { trailerUrl: "" },
+      trailer: { trailerUrl: "", movieName: "" },
     };
   }
 
@@ -26,13 +26,15 @@ class Row extends Component {
 
   handleMovieClick = (movieName) => {
     // Handle click on any movie poster
-    if (this.state.trailer.trailerUrl) {
-      this.setState({ trailer: { trailerUrl: "" } });
+    if (this.state.trailer.movieName === movieName) {
+      this.setState({ trailer: { trailerUrl: "", movieName: "" } });
     } else {
       movieTrailer(movieName)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          this.setState({ trailer: { trailerUrl: urlParams.get("v") } });
+          this.setState({
+            trailer: { trailerUrl: urlParams.get("v"), movieName: movieName },
+          });
         })
         .catch((err) => {
           console.log(err);
