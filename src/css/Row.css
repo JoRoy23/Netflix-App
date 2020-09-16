@@ -1,0 +1,130 @@
+/*=======================
+   SASS CONFIGURATION
+ ======================== */
+/* =======================
+           ROW
+========================== */
+.row {
+  position: relative;
+  padding: 0 0 1.5vw 2vw;
+  overflow-x: visible;
+}
+
+@media screen and (min-width: 928px) {
+  .row {
+    padding: 0 0 15px 20px;
+  }
+}
+
+.row__title {
+  margin-left: 2vw;
+  font-size: 2.8vw;
+  color: #fff;
+}
+
+@media screen and (min-width: 928px) {
+  .row__title {
+    margin-left: 20px;
+    font-size: 1.6rem;
+  }
+}
+
+.row__posters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2vw;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-transition: margin 0.5s ease;
+  transition: margin 0.5s ease;
+}
+
+@media screen and (min-width: 928px) {
+  .row__posters {
+    padding: 20px;
+  }
+}
+
+.row__posters:hover .row__previousMovie,
+.row__posters:hover .row__nextMovie {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row__previousMovie, .row__nextMovie {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .row__previousMovie, .row__nextMovie {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 1;
+    background: transparent;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+}
+
+.row__previousMovie i, .row__nextMovie i {
+  font-size: 3vw;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 928px) {
+  .row__previousMovie i, .row__nextMovie i {
+    font-size: 1.7rem;
+  }
+}
+
+.row__previousMovie i:hover, .row__nextMovie i:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.row__nextMovie {
+  right: 0;
+}
+
+.row__previousMovie {
+  left: 0;
+}
+
+.row__previousMovie:hover, .row__nextMovie:hover {
+  background: rgba(20, 20, 20, 0.5);
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=Row.css.map */

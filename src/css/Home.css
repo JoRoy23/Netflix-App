@@ -1,0 +1,17 @@
+/*=======================
+   SASS CONFIGURATION
+ ======================== */
+/* =======================
+           HOME
+========================== */
+.home {
+  background-color: #141414;
+  padding-top: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    padding-top: 0;
+  }
+}
+/*# sourceMappingURL=Home.css.map */

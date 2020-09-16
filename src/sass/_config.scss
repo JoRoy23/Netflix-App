@@ -1,0 +1,39 @@
+/*=======================
+   SASS CONFIGURATION
+ ======================== */
+// Media querie configuration
+$ipad: 768px;
+$desktop: 928px;
+$largeDesktop: 1600px;
+
+@mixin ipad {
+  @media screen and(min-width: #{$ipad}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and(min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin largeDesktop {
+  @media screen and(min-width: #{$largeDesktop}) {
+    @content;
+  }
+}
+
+// Ordinary button configuration
+%banner__button {
+  flex-shrink: 0;
+  flex-grow: 1;
+  cursor: pointer;
+  padding: 1vw;
+  margin-right: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5vw;
+  font-size: 1.1vw;
+  font-weight: 700;
+}

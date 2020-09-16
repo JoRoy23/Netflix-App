@@ -1,0 +1,11 @@
+@import "config.scss";
+/* =======================
+           HOME
+========================== */
+.home {
+  background-color: rgba(20, 20, 20, 1);
+  padding-top: 70px;
+  @include ipad {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA;;4BAE4B;ADD5B;;6BAE6B;AAC7B,AAAA,KAAK,CAAC;EACJ,gBAAgB,EAAE,OAAmB;EACrC,WAAW,EAAE,IAAI;CAIlB;;ACDC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDLrC,AAAA,KAAK,CAAC;IAIF,WAAW,EAAE,CAAC;GAEjB",
+    "sources": [
+        "../sass/Home.scss",
+        "../sass/_config.scss"
+    ],
+    "names": [],
+    "file": "Home.css"
+}

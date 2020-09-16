@@ -1,0 +1,41 @@
+/*=======================
+   SASS CONFIGURATION
+ ======================== */
+/* =======================
+          POSTER
+========================== */
+.poster {
+  width: 20vw;
+  height: 12vw;
+  max-height: 130px;
+  margin-right: 1vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 5px;
+  -webkit-transition: -webkit-transform 450ms;
+  transition: -webkit-transform 450ms;
+  transition: transform 450ms;
+  transition: transform 450ms, -webkit-transform 450ms;
+}
+
+@media screen and (min-width: 928px) {
+  .poster {
+    margin-right: 10px;
+  }
+}
+
+.poster:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+.poster__large {
+  height: 30vw;
+  max-height: 280px;
+}
+
+.poster__large:hover {
+  -webkit-transform: scale(1.09);
+          transform: scale(1.09);
+}
+/*# sourceMappingURL=Poster.css.map */
