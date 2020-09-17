@@ -16,15 +16,17 @@
     margin-left: 2vw;
     font-size: 12px;
     font-weight: 700;
+    letter-spacing: 0.5px;
     color: #fff;
     @include ipad {
-      font-size: 1.4vw;
+      font-size: 1.7vw;
     }
     @include desktop {
       margin-left: 20px;
+      font-size: 1.6vw;
     }
-    @include extraLargeDesktop {
-      font-size: 1.25rem;
+    @include largeDesktop {
+      font-size: 1.1rem;
     }
   }
 

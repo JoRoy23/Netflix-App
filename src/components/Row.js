@@ -70,10 +70,10 @@ class Row extends Component {
   }
 
   renderingRightArrowClick() {
-    const { row, onRightArrowClick } = this.props;
+    const { row, onRightArrowClick, determineRowWidth } = this.props;
+    const rowWidth = determineRowWidth();
 
     if (window.innerWidth >= 768 && window.innerWidth < 1100) {
-      var rowWidth = -0.24 * 20 * window.innerWidth - 300 + window.innerWidth;
       const rightArrow =
         row.xPosition === rowWidth ? (
           ""
@@ -89,7 +89,6 @@ class Row extends Component {
         );
       return rightArrow;
     } else if (window.innerWidth >= 1100 && window.innerWidth < 1400) {
-      var rowWidth = -0.18 * 20 * window.innerWidth - 300 + window.innerWidth;
       const rightArrow =
         row.xPosition === rowWidth ? (
           ""
@@ -105,7 +104,6 @@ class Row extends Component {
         );
       return rightArrow;
     } else if (window.innerWidth >= 1400) {
-      var rowWidth = -0.15 * 20 * window.innerWidth - 300 + window.innerWidth;
       const rightArrow =
         row.xPosition === rowWidth ? (
           ""

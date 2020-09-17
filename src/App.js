@@ -3,11 +3,13 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { Switch, Route } from "react-router-dom";
 import "./css/App.css";
+import GlobalFonts from "./font/font";
 
 class App extends Component {
   render() {
     return (
       <div className="app">
+        <GlobalFonts />
         <Navbar />
         <Switch>
           <Route exact path="/" render={() => <Home />}></Route>

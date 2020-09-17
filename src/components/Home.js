@@ -44,16 +44,7 @@ class Home extends Component {
     const updatedMovieRow = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         const xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
-        if (window.innerWidth >= 768 && window.innerWidth < 1100) {
-          var rowWidth =
-            -0.24 * 20 * window.innerWidth - 300 + window.innerWidth;
-        } else if (window.innerWidth >= 1100 && window.innerWidth < 1400) {
-          var rowWidth =
-            -0.18 * 20 * window.innerWidth - 300 + window.innerWidth;
-        } else if (window.innerWidth >= 1400) {
-          var rowWidth =
-            -0.15 * 20 * window.innerWidth - 300 + window.innerWidth;
-        }
+        const rowWidth = this.determineRowWidth();
 
         xPosition < rowWidth
           ? (row.xPosition = rowWidth)
@@ -65,6 +56,20 @@ class Home extends Component {
     });
     this.setState({ movieRows: updatedMovieRow });
   };
+
+  determineRowWidth() {
+    // Determine the width of the row
+    if (window.innerWidth >= 768 && window.innerWidth < 1100) {
+      const rowWidth = -0.24 * 20 * window.innerWidth - 300 + window.innerWidth;
+      return rowWidth;
+    } else if (window.innerWidth >= 1100 && window.innerWidth < 1400) {
+      const rowWidth = -0.18 * 20 * window.innerWidth - 300 + window.innerWidth;
+      return rowWidth;
+    } else if (window.innerWidth >= 1400) {
+      const rowWidth = -0.15 * 20 * window.innerWidth - 300 + window.innerWidth;
+      return rowWidth;
+    }
+  }
 
   bannerUrl(backdropPath) {
     // Creating the url for every movie poster
@@ -89,6 +94,7 @@ class Home extends Component {
       <Row
         key={row.id}
         row={row}
+        determineRowWidth={this.determineRowWidth}
         onRightArrowClick={this.handleClickRightArrow}
         onLeftArrowClick={this.handleClickLeftArrow}
       />

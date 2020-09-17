@@ -32,23 +32,23 @@
     }
 
     .banner__title {
-      font-size: 4vw;
+      font-size: 5vw;
       font-weight: 800;
       @include extraLargeDesktop {
-        font-size: 3.7rem;
+        font-size: 4.4rem;
       }
     }
 
     .banner__description {
       width: 70%;
       margin: 1.5vw 0 1.3vw;
-      line-height: 1.9vw;
-      font-size: 1.4vw;
+      line-height: 2.2vw;
+      font-size: 1.6vw;
       font-weight: 500;
       @include extraLargeDesktop {
         margin: 1.5rem 0 1.3rem;
-        line-height: 1.8rem;
-        font-size: 1.3rem;
+        line-height: 2rem;
+        font-size: 1.4rem;
       }
     }
 
