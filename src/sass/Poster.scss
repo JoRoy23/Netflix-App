@@ -2,16 +2,26 @@
 /* =======================
           POSTER
 ========================== */
-.poster {
+.poster,
+.poster--large {
   flex-shrink: 0;
-  width: 22vw;
+  width: 44vw;
   height: auto;
   margin-right: 1vw;
   border-radius: 5px;
   transition: transform 450ms;
-  @include desktop {
+  @include bigPhone {
+    width: 30vw;
+  }
+  @include ipad {
+    width: 24vw;
     margin-right: 13px;
-    max-width: 330px;
+  }
+  @include largeDesktop {
+    width: 18vw;
+  }
+  @include extraLargeDesktop {
+    width: 15vw;
   }
 }
 
@@ -19,14 +29,6 @@
   transform: scale(1.08);
 }
 
-.poster__large {
-  width: 20vw;
-  height: auto;
-  @include desktop {
-    max-width: 270px;
-  }
-}
-
-.poster__large:hover {
-  transform: scale(1.09);
+.poster--large:hover {
+  transform: scale(1.05);
 }

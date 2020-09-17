@@ -4,7 +4,7 @@
 ========================== */
 .row {
   position: relative;
-  padding: 0 0 1.5vw 2vw;
+  padding: 0 0 3vw 2vw;
   overflow-x: visible;
   @include desktop {
     padding: 0 0 15px 20px;
@@ -12,25 +12,82 @@
 
   &__title {
     position: relative;
-    z-index: 100;
+    z-index: 50;
     margin-left: 2vw;
-    font-size: 2.8vw;
+    font-size: 12px;
+    font-weight: 700;
     color: #fff;
+    @include ipad {
+      font-size: 1.4vw;
+    }
     @include desktop {
       margin-left: 20px;
-      font-size: 1.6rem;
+    }
+    @include extraLargeDesktop {
+      font-size: 1.25rem;
     }
   }
 
   &__posters {
     display: flex;
-    padding: 2vw;
+    padding: 1vw 2vw 2vw;
     overflow-y: hidden;
     overflow-x: scroll;
     transition: margin 0.5s ease;
     scrollbar-width: none;
+    @include ipad {
+      padding-top: 7px;
+    }
     @include desktop {
-      padding: 20px;
+      padding: 7px 20px 20px;
+    }
+
+    .row__previousMovie,
+    .row__nextMovie {
+      display: none;
+      @include ipad {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        z-index: 1;
+        background: transparent;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      i {
+        font-size: 2.7vw;
+        transition: transform 0.4s;
+        cursor: pointer;
+        @include desktop {
+          font-size: 1.7rem;
+        }
+      }
+
+      i:hover {
+        transform: scale(1.25);
+        transition: transform 0.4s;
+      }
+    }
+
+    .row__nextMovie {
+      right: 0;
+    }
+
+    .row__previousMovie {
+      left: 0;
+    }
+
+    .row__previousMovie:hover,
+    .row__nextMovie:hover {
+      background: rgba(20, 20, 20, 0.5);
+      cursor: pointer;
+      transition: background 0.5s;
     }
   }
 
@@ -42,54 +99,6 @@
 
   &__posters::-webkit-scrollbar {
     display: none;
-  }
-
-  &__previousMovie,
-  &__nextMovie {
-    display: none;
-    @include ipad {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 60px;
-      z-index: 1;
-      background: transparent;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    i {
-      font-size: 3vw;
-      transition: transform 0.4s;
-      cursor: pointer;
-      @include desktop {
-        font-size: 1.7rem;
-      }
-    }
-
-    i:hover {
-      transform: scale(1.25);
-      transition: transform 0.4s;
-    }
-  }
-
-  &__nextMovie {
-    right: 0;
-  }
-
-  &__previousMovie {
-    left: 0;
-  }
-
-  &__previousMovie:hover,
-  &__nextMovie:hover {
-    background: rgba(20, 20, 20, 0.5);
-    cursor: pointer;
-    transition: background 0.5s;
   }
 }
 

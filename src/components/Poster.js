@@ -7,7 +7,7 @@ class Poster extends Component {
     const { title, isPosterLarge, bannerUrl, onMovieClick } = this.props;
     return (
       <img
-        className={`poster ${isPosterLarge && "poster__large"}`}
+        className={`poster ${isPosterLarge && "poster--large"}`}
         src={bannerUrl}
         alt={title}
         onClick={() => {

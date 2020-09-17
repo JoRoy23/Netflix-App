@@ -9,6 +9,7 @@
   color: #fff;
   @include ipad {
     display: block;
+    margin-bottom: 15px;
   }
 
   &__image {
@@ -31,10 +32,10 @@
     }
 
     .banner__title {
-      font-size: 4.5vw;
+      font-size: 4vw;
       font-weight: 800;
-      @include largeDesktop {
-        font-size: 4.6rem;
+      @include extraLargeDesktop {
+        font-size: 3.7rem;
       }
     }
 
@@ -43,10 +44,11 @@
       margin: 1.5vw 0 1.3vw;
       line-height: 1.9vw;
       font-size: 1.4vw;
-      @include largeDesktop {
+      font-weight: 500;
+      @include extraLargeDesktop {
         margin: 1.5rem 0 1.3rem;
-        line-height: 1.9rem;
-        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-size: 1.3rem;
       }
     }
 

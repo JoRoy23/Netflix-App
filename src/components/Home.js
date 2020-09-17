@@ -28,46 +28,42 @@ class Home extends Component {
 
   handleClickLeftArrow = (rowId) => {
     // Moving posters to the left on left arrow click
-    const newArr = this.state.movieRows.map((row) => {
+    const updatedMovieRow = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
-        let xPosition = row.xPosition + Math.floor(window.innerWidth / 2);
-        if (xPosition > 0) {
-          row.xPosition = 0;
-        } else {
-          row.xPosition = xPosition;
-        }
+        const xPosition = row.xPosition + Math.floor(window.innerWidth / 2);
+        xPosition > 0 ? (row.xPosition = 0) : (row.xPosition = xPosition);
         return row;
       }
       return row;
     });
-    this.setState({ movieRows: newArr });
+    this.setState({ movieRows: updatedMovieRow });
   };
 
   handleClickRightArrow = (rowId) => {
     // Moving posters to the right on right arrow click
-    const newArr = this.state.movieRows.map((row) => {
+    const updatedMovieRow = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
-        let xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
-        if (window.innerWidth > 900) {
-          if (row.isLargeRow) {
-            var rowWidth = 5600;
-          } else {
-            var rowWidth = 6800;
-          }
-        } else {
+        const xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
+        if (window.innerWidth >= 768 && window.innerWidth < 1100) {
+          var rowWidth =
+            -0.24 * 20 * window.innerWidth - 300 + window.innerWidth;
+        } else if (window.innerWidth >= 1100 && window.innerWidth < 1400) {
+          var rowWidth =
+            -0.18 * 20 * window.innerWidth - 300 + window.innerWidth;
+        } else if (window.innerWidth >= 1400) {
+          var rowWidth =
+            -0.15 * 20 * window.innerWidth - 300 + window.innerWidth;
         }
 
-        if (window.innerWidth - rowWidth > xPosition) {
-          row.xPosition = window.innerWidth - rowWidth;
-        } else {
-          row.xPosition = xPosition;
-          console.log(xPosition);
-        }
+        xPosition < rowWidth
+          ? (row.xPosition = rowWidth)
+          : (row.xPosition = xPosition);
+
         return row;
       }
       return row;
     });
-    this.setState({ movieRows: newArr });
+    this.setState({ movieRows: updatedMovieRow });
   };
 
   bannerUrl(backdropPath) {

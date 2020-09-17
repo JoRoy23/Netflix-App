@@ -2,10 +2,17 @@
    SASS CONFIGURATION
  ======================== */
 // Media querie configuration
+$bigPhone: 500px;
 $ipad: 768px;
 $desktop: 928px;
-$largeDesktop: 1600px;
+$largeDesktop: 1100px;
+$extraLargeDesktop: 1400px;
 
+@mixin bigPhone {
+  @media screen and(min-width: #{$bigPhone}) {
+    @content;
+  }
+}
 @mixin ipad {
   @media screen and(min-width: #{$ipad}) {
     @content;
@@ -20,6 +27,11 @@ $largeDesktop: 1600px;
 
 @mixin largeDesktop {
   @media screen and(min-width: #{$largeDesktop}) {
+    @content;
+  }
+}
+@mixin extraLargeDesktop {
+  @media screen and(min-width: #{$extraLargeDesktop}) {
     @content;
   }
 }

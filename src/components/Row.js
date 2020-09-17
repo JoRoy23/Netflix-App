@@ -69,6 +69,60 @@ class Row extends Component {
     return leftArrow;
   }
 
+  renderingRightArrowClick() {
+    const { row, onRightArrowClick } = this.props;
+
+    if (window.innerWidth >= 768 && window.innerWidth < 1100) {
+      var rowWidth = -0.24 * 20 * window.innerWidth - 300 + window.innerWidth;
+      const rightArrow =
+        row.xPosition === rowWidth ? (
+          ""
+        ) : (
+          <div
+            className="row__nextMovie"
+            onClick={() => {
+              onRightArrowClick(row.id);
+            }}
+          >
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        );
+      return rightArrow;
+    } else if (window.innerWidth >= 1100 && window.innerWidth < 1400) {
+      var rowWidth = -0.18 * 20 * window.innerWidth - 300 + window.innerWidth;
+      const rightArrow =
+        row.xPosition === rowWidth ? (
+          ""
+        ) : (
+          <div
+            className="row__nextMovie"
+            onClick={() => {
+              onRightArrowClick(row.id);
+            }}
+          >
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        );
+      return rightArrow;
+    } else if (window.innerWidth >= 1400) {
+      var rowWidth = -0.15 * 20 * window.innerWidth - 300 + window.innerWidth;
+      const rightArrow =
+        row.xPosition === rowWidth ? (
+          ""
+        ) : (
+          <div
+            className="row__nextMovie"
+            onClick={() => {
+              onRightArrowClick(row.id);
+            }}
+          >
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        );
+      return rightArrow;
+    }
+  }
+
   renderingRow() {
     // Rendering the movies in each row
     const { row } = this.props;
@@ -86,26 +140,21 @@ class Row extends Component {
   }
 
   render() {
-    const { row, onRightArrowClick, onLeftArrowClick } = this.props;
+    const { row } = this.props;
     return (
-      <div className="row">
-        <h2 className="row__title">{row.title}</h2>
-        <div className="row__posters" style={{ marginLeft: row.xPosition }}>
-          {this.renderingleftArrowClick()}
-          {this.renderingRow()}
-          <div
-            className="row__nextMovie"
-            onClick={() => {
-              onRightArrowClick(row.id);
-            }}
-          >
-            <i class="fas fa-chevron-right"></i>
+      <React.Fragment>
+        <div className="row">
+          <h2 className="row__title">{row.title}</h2>
+          <div className="row__posters" style={{ marginLeft: row.xPosition }}>
+            {this.renderingleftArrowClick()}
+            {this.renderingRightArrowClick()}
+            {this.renderingRow()}
           </div>
         </div>
         {this.state.trailer.trailerUrl && (
           <MovieTrailer trailerUrl={this.state.trailer.trailerUrl} />
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }

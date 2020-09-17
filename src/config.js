@@ -12,12 +12,6 @@ const bannerRequest = {
 // Informations regarding each row
 const rowInformation = [
   {
-    title: "Netflix Original",
-    fetchUrl: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
-    isLargeRow: true,
-    xPosition: 0,
-  },
-  {
     title: "Trending Now",
     fetchUrl: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
     isLargeRow: false,
@@ -27,6 +21,12 @@ const rowInformation = [
     title: "Top Rated",
     fetchUrl: `movie/top_rated?api_key=${API_KEY}&language=en-US`,
     isLargeRow: false,
+    xPosition: 0,
+  },
+  {
+    title: "Netflix Original",
+    fetchUrl: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
+    isLargeRow: true,
     xPosition: 0,
   },
   {
