@@ -5,7 +5,7 @@
           POSTER
 ========================== */
 .poster,
-.poster--large {
+.poster__large {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 44vw;
@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 500px) {
   .poster,
-  .poster--large {
+  .poster__large {
     width: 30vw;
     height: 17vw;
   }
@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 768px) {
   .poster,
-  .poster--large {
+  .poster__large {
     width: 24vw;
     height: 14vw;
     margin-right: 13px;
@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 1100px) {
   .poster,
-  .poster--large {
+  .poster__large {
     width: 18vw;
     height: 10vw;
   }
@@ -45,51 +45,51 @@
 
 @media screen and (min-width: 1400px) {
   .poster,
-  .poster--large {
+  .poster__large {
     width: 15vw;
     height: 8.8vw;
   }
 }
 
-.poster--large {
+.poster__large {
   height: 64vw;
 }
 
 @media screen and (min-width: 500px) {
-  .poster--large {
+  .poster__large {
     height: 45vw;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .poster--large {
+  .poster__large {
     height: 35vw;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .poster--large {
+  .poster__large {
     height: 27vw;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .poster--large {
+  .poster__large {
     height: 22vw;
   }
 }
 
 @media screen and (min-width: 768px) {
   .poster:hover {
-    -webkit-transform: scale(1.08);
-            transform: scale(1.08);
+    -webkit-transform: scale(1.06);
+            transform: scale(1.06);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .poster--large:hover {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+  .poster__large:hover {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
   }
 }
 /*# sourceMappingURL=Poster.css.map */
