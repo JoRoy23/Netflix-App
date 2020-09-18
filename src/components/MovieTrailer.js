@@ -1,19 +1,31 @@
 import React, { Component } from "react";
 import Youtube from "react-youtube";
+import "../css/MovieTrailer.css";
 
 // Stateless Component
 class MovieTrailer extends Component {
+  determineTrailerHeight() {
+    if (window.innerWidth >= 768) {
+      return "350px";
+    }
+    return "170px";
+  }
+
   render() {
     // Config for the movies trailer
     const opts = {
-      height: "390",
+      height: this.determineTrailerHeight(),
       width: "100%",
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
       },
     };
-    return <Youtube videoId={this.props.trailerUrl} opts={opts} />;
+    return (
+      <div className="movieTrailer">
+        <Youtube videoId={this.props.trailerUrl} opts={opts} />
+      </div>
+    );
   }
 }
 

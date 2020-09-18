@@ -80,8 +80,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 50px;
     z-index: 1;
+    width: 50px;
     background: transparent;
     color: #fff;
     display: -webkit-box;
@@ -101,12 +101,12 @@
 
 .row__posters .row__previousMovie i,
 .row__posters .row__nextMovie i {
+  cursor: pointer;
   font-size: 2.7vw;
   -webkit-transition: -webkit-transform 0.4s;
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   transition: transform 0.4s, -webkit-transform 0.4s;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 928px) {
@@ -136,8 +136,8 @@
 
 .row__posters .row__previousMovie:hover,
 .row__posters .row__nextMovie:hover {
-  background: rgba(20, 20, 20, 0.5);
   cursor: pointer;
+  background: rgba(20, 20, 20, 0.5);
   -webkit-transition: background 0.5s;
   transition: background 0.5s;
 }

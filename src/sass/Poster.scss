@@ -6,29 +6,53 @@
 .poster--large {
   flex-shrink: 0;
   width: 44vw;
-  height: auto;
+  height: 25vw;
   margin-right: 1vw;
   border-radius: 5px;
   transition: transform 450ms;
   @include bigPhone {
     width: 30vw;
+    height: 17vw;
   }
   @include ipad {
     width: 24vw;
+    height: 14vw;
     margin-right: 13px;
   }
   @include largeDesktop {
     width: 18vw;
+    height: 10vw;
   }
   @include extraLargeDesktop {
     width: 15vw;
+    height: 8.8vw;
+  }
+}
+
+.poster--large {
+  height: 64vw;
+  @include bigPhone {
+    height: 45vw;
+  }
+  @include ipad {
+    height: 35vw;
+  }
+  @include largeDesktop {
+    height: 27vw;
+  }
+  @include extraLargeDesktop {
+    height: 22vw;
   }
 }
 
 .poster:hover {
-  transform: scale(1.08);
+  @include ipad {
+    transform: scale(1.08);
+  }
 }
 
 .poster--large:hover {
-  transform: scale(1.05);
+  @include ipad {
+    transform: scale(1.05);
+  }
 }

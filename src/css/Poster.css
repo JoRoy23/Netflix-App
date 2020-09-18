@@ -9,7 +9,7 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 44vw;
-  height: auto;
+  height: 25vw;
   margin-right: 1vw;
   border-radius: 5px;
   -webkit-transition: -webkit-transform 450ms;
@@ -22,6 +22,7 @@
   .poster,
   .poster--large {
     width: 30vw;
+    height: 17vw;
   }
 }
 
@@ -29,6 +30,7 @@
   .poster,
   .poster--large {
     width: 24vw;
+    height: 14vw;
     margin-right: 13px;
   }
 }
@@ -37,6 +39,7 @@
   .poster,
   .poster--large {
     width: 18vw;
+    height: 10vw;
   }
 }
 
@@ -44,16 +47,49 @@
   .poster,
   .poster--large {
     width: 15vw;
+    height: 8.8vw;
   }
 }
 
-.poster:hover {
-  -webkit-transform: scale(1.08);
-          transform: scale(1.08);
+.poster--large {
+  height: 64vw;
 }
 
-.poster--large:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+@media screen and (min-width: 500px) {
+  .poster--large {
+    height: 45vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .poster--large {
+    height: 35vw;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .poster--large {
+    height: 27vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .poster--large {
+    height: 22vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .poster:hover {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .poster--large:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
 }
 /*# sourceMappingURL=Poster.css.map */

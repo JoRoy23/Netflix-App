@@ -31,8 +31,9 @@ class Home extends Component {
     const updatedMovieRow = this.state.movieRows.map((row) => {
       if (rowId === row.id) {
         const xPosition = row.xPosition + Math.floor(window.innerWidth / 2);
-        xPosition > 0 ? (row.xPosition = 0) : (row.xPosition = xPosition);
-        return row;
+        const updatedRow =
+          xPosition > 0 ? { ...row, xPosition: 0 } : { ...row, xPosition };
+        return updatedRow;
       }
       return row;
     });
@@ -46,11 +47,12 @@ class Home extends Component {
         const xPosition = row.xPosition - Math.floor(window.innerWidth / 2);
         const rowWidth = this.determineRowWidth();
 
-        xPosition < rowWidth
-          ? (row.xPosition = rowWidth)
-          : (row.xPosition = xPosition);
+        const updatedRow =
+          xPosition < rowWidth
+            ? { ...row, xPosition: rowWidth }
+            : { ...row, xPosition: xPosition };
 
-        return row;
+        return updatedRow;
       }
       return row;
     });

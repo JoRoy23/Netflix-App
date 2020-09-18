@@ -51,8 +51,8 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 50px;
         z-index: 1;
+        width: 50px;
         background: transparent;
         color: #fff;
         display: flex;
@@ -63,9 +63,9 @@
       }
 
       i {
+        cursor: pointer;
         font-size: 2.7vw;
         transition: transform 0.4s;
-        cursor: pointer;
         @include desktop {
           font-size: 1.7rem;
         }
@@ -87,8 +87,8 @@
 
     .row__previousMovie:hover,
     .row__nextMovie:hover {
-      background: rgba(20, 20, 20, 0.5);
       cursor: pointer;
+      background: rgba(20, 20, 20, 0.5);
       transition: background 0.5s;
     }
   }

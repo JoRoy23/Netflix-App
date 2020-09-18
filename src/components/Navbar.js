@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import netflixLogo from "../images/netflixLogo.png";
 import userAvatar from "../images/userAvatar.png";
 import "../css/Navbar.css";
 
@@ -43,84 +42,75 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div
+      <header
         className={
           this.state.navbar.onWindowTop ? "navbar" : "navbar navbar--active"
         }
       >
-        <div className="navbar__mainContainer">
-          <div className="navbar__container">
-            <div
-              className={
-                this.state.navbar.isNavOpen
-                  ? "hamburger hamburger--toX"
-                  : "hamburger"
-              }
-              onClick={this.handleHamburgerClick}
-            >
-              <div className="hamburger__middleBar"></div>
-            </div>
-            <img
-              className="navbar__logo"
-              src={netflixLogo}
-              alt="Netflix Logo"
-            ></img>
+        <div className="navbar__container">
+          <div className="hamburger" onClick={this.handleHamburgerClick}>
+            <div className="hamburger__middleBar"></div>
           </div>
-          <ul
-            className={
-              this.state.navbar.isNavOpen
-                ? "navbar__items navbar__items--open"
-                : "navbar__items"
-            }
-          >
-            <li className="navbar__item">
-              <NavLink
-                exact
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="navbar__item">
-              <NavLink
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                to="/tvshows"
-              >
-                TV Shows
-              </NavLink>
-            </li>
-            <li className="navbar__item">
-              <NavLink
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                to="/movies"
-              >
-                Movies
-              </NavLink>
-            </li>
-            <li className="navbar__item">
-              <NavLink
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                to="/latest"
-              >
-                Latest
-              </NavLink>
-            </li>
-            <li className="navbar__item">
-              <NavLink
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                to="/mylist"
-              >
-                My List
-              </NavLink>
-            </li>
-          </ul>
+          <img
+            className="navbar__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/320px-Netflix_2015_logo.svg.png"
+            alt="Netflix Logo"
+          ></img>
         </div>
+        <ul
+          className={
+            this.state.navbar.isNavOpen
+              ? "navbar__items navbar__items--open"
+              : "navbar__items"
+          }
+        >
+          <li className="navbar__item">
+            <NavLink
+              exact
+              className="navbar__link"
+              activeClassName="navbar__link--active"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li className="navbar__item">
+            <NavLink
+              className="navbar__link"
+              activeClassName="navbar__link--active"
+              to="/tvshows"
+            >
+              TV Shows
+            </NavLink>
+          </li>
+          <li className="navbar__item">
+            <NavLink
+              className="navbar__link"
+              activeClassName="navbar__link--active"
+              to="/movies"
+            >
+              Movies
+            </NavLink>
+          </li>
+          <li className="navbar__item">
+            <NavLink
+              className="navbar__link"
+              activeClassName="navbar__link--active"
+              to="/latest"
+            >
+              Latest
+            </NavLink>
+          </li>
+          <li className="navbar__item">
+            <NavLink
+              className="navbar__link"
+              activeClassName="navbar__link--active"
+              to="/mylist"
+            >
+              My List
+            </NavLink>
+          </li>
+        </ul>
         <ul className="navbar__icons">
           <li className="navbar__icon">
             <i class="fas fa-search"></i>
@@ -131,13 +121,15 @@ class Navbar extends Component {
           <li className="navbar__icon">
             <i class="fas fa-bell"></i>
           </li>
-          <img
-            className="navbar__avatar"
-            src={userAvatar}
-            alt=" User Avatar"
-          ></img>
+          <li className="navbar__icon">
+            <img
+              className="navbar__avatar"
+              src={userAvatar}
+              alt=" User Avatar"
+            ></img>
+          </li>
         </ul>
-      </div>
+      </header>
     );
   }
 }
